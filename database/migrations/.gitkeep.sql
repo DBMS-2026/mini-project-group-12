@@ -1,0 +1,3 @@
+-- Migration placeholder
+-- Sequelize handles migrations via its sync() method
+-- For production, use Sequelize CLI migrations

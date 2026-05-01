@@ -1,25 +1,26 @@
+import { motion } from 'framer-motion'
+import VideoPlayer from './VideoPlayer'
+import ReelInfo from './ReelInfo'
+import ReelActions from './ReelActions'
+
 function ReelCard({ reel }) {
   return (
-    <div className="relative w-full h-screen bg-black flex items-center justify-center">
-      <div className="w-[350px] h-[600px] bg-gray-800 rounded-3xl flex items-center justify-center text-white">
-        Reel Video Here
-      </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4 }}
+      className="relative h-screen flex items-center justify-center bg-black overflow-hidden"
+    >
+      <div className="relative w-[380px] h-[700px] rounded-[40px] overflow-hidden shadow-2xl border border-white/10">
+        <VideoPlayer video={reel.video} />
 
-      <div className="absolute bottom-10 left-10 text-white">
-        <h2 className="text-xl font-bold">{reel.username}</h2>
-        <p>{reel.caption}</p>
-        <p className="text-sm text-gray-300">{reel.restaurant}</p>
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
-      <div className="absolute right-10 bottom-20 flex flex-col gap-4">
-        <button className="bg-red-500 text-white px-4 py-2 rounded-full">
-          Like
-        </button>
-        <button className="bg-white text-black px-4 py-2 rounded-full">
-          Comment
-        </button>
+        <ReelInfo reel={reel} />
+
+        <ReelActions />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

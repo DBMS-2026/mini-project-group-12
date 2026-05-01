@@ -1,0 +1,11 @@
+{
+  "name": "crave-food",
+  "version": "1.0.0",
+  "description": "Crave Food - Full Stack Food Social Media Platform",
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && npm run dev",
+    "install:all": "cd frontend && npm install && cd ../backend && npm install",
+    "dev": "cd backend && npm run dev"
+  }
+}
